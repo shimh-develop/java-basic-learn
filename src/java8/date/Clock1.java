@@ -10,7 +10,7 @@ public class Clock1 {
 		Clock clock = Clock.systemDefaultZone();
 		
 		print(clock.millis());	//1506049805308
-		print(System.currentTimeMillis()); //1506049805308
+		print(System.currentTimeMillis()); //1506049805308   
 		
 		print(Date.from(clock.instant()));
 		
