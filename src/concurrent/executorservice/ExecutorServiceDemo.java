@@ -23,16 +23,18 @@ public class ExecutorServiceDemo {
 			
 			@Override
 			public void run() {
-				System.out.println("线程1执行了---");
-				try {
-					TimeUnit.MILLISECONDS.sleep(2000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
+				throw new RuntimeException("aa");
+
+//				System.out.println("线程1执行了---");
+//				try {
+//					TimeUnit.MILLISECONDS.sleep(1000);
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
 			}
 		});
 		
-		System.out.println(future1.get()); //阻塞等待任务结束
+		//System.out.println(future1.get()); //阻塞等待任务结束
 		
 		Future<String> future2 = executor.submit(new Callable<String>() {
 
@@ -44,8 +46,10 @@ public class ExecutorServiceDemo {
 			}
 		});
 		
-		System.out.println(future2.get()); //阻塞等待任务结束
+		//System.out.println(future2.get()); //阻塞等待任务结束
 		
+
+		TimeUnit.MILLISECONDS.sleep(10000);
 		System.out.println("最后结束");
 		executor.shutdown();
 	}

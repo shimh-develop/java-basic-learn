@@ -14,8 +14,8 @@ public class ScheduledThreadPoolExecutorDemo {
 	private static SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	private static ScheduledThreadPoolExecutor exec = new ScheduledThreadPoolExecutor(2);
 	public static void main(String[] args) throws Exception {
-	    demo1();
-	    //demo2();
+	    //demo1();
+	    demo2();
 	    //demo3();
 	    //demo4();
 	    //demo5();
@@ -32,12 +32,12 @@ public class ScheduledThreadPoolExecutorDemo {
 		 exec.scheduleAtFixedRate(new Runnable() {
 	            public void run() {
 	                System.out.println(format.format(new Date()));
-	               /* try {
-	                	
+	               try {
+
 						TimeUnit.MILLISECONDS.sleep(7000);   //时间长任务，结束后再调用
 					} catch (InterruptedException e) {
 						e.printStackTrace();
-					}*/
+					}
 	            }
 	        }, 1000, 5000, TimeUnit.MILLISECONDS);
 	}
@@ -49,6 +49,7 @@ public class ScheduledThreadPoolExecutorDemo {
                 throw new RuntimeException();
             }
         }, 1000, 5000, TimeUnit.MILLISECONDS);
+
 	}
 	
 	private static void demo3(){

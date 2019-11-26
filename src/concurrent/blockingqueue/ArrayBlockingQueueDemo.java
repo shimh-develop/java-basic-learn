@@ -33,7 +33,7 @@ public class ArrayBlockingQueueDemo {
 		abq.put("4");
 		
 		System.out.println(abq.remainingCapacity());//剩余空间
-		//队列空时 remove 抛异常 poll 返回false take 阻塞
+		//队列空时 remove 抛异常 poll 返回null take 阻塞
 		abq.remove();
 		abq.poll();
 		abq.take();
